@@ -127,14 +127,14 @@ public final class StockIn extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         btnSave1 = new javax.swing.JButton();
-        category1 = new javax.swing.JComboBox<>();
+        edit_cat = new javax.swing.JComboBox<>();
         qty1 = new javax.swing.JSpinner();
         jLabel19 = new javax.swing.JLabel();
         edit_item_name = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        receiver1 = new javax.swing.JTextField();
-        date_picker1 = new com.github.lgooddatepicker.components.DatePicker();
+        edit_receiver = new javax.swing.JTextField();
+        edit_date = new com.github.lgooddatepicker.components.DatePicker();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         itemID = new javax.swing.JTextField();
@@ -366,7 +366,7 @@ public final class StockIn extends javax.swing.JFrame {
         btnSave1.setFont(new java.awt.Font("Yu Gothic Medium", 0, 14)); // NOI18N
         btnSave1.setText("Save");
 
-        category1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select one", "Perishable ", "Non-Perishable" }));
+        edit_cat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select one", "Perishable ", "Non-Perishable" }));
 
         jLabel19.setText("Item Name");
 
@@ -389,7 +389,7 @@ public final class StockIn extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(edit_desc, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(category1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edit_cat, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(qty1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(edit_item_name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -406,8 +406,8 @@ public final class StockIn extends javax.swing.JFrame {
                                     .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(receiver1, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-                                    .addComponent(date_picker1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(edit_receiver, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                                    .addComponent(edit_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -428,13 +428,13 @@ public final class StockIn extends javax.swing.JFrame {
                     .addComponent(edit_desc)
                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(receiver1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(edit_receiver, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(category1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(edit_cat, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                     .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(date_picker1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(edit_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -840,6 +840,8 @@ public final class StockIn extends javax.swing.JFrame {
             edit_desc.setText(desc);
             String supplier = result.getString("Supplier");
             edit_supplier.setText(supplier);
+            String receiver = result.getString("ReceivedBy");
+            receiver.setText(receiver);
             
         } catch (Exception e) {
             //
@@ -904,17 +906,18 @@ public final class StockIn extends javax.swing.JFrame {
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnSave1;
     private javax.swing.JComboBox<String> category;
-    private javax.swing.JComboBox<String> category1;
     private javax.swing.JMenuItem closeMenuItem;
     private javax.swing.JTable dataTableInfo;
     private javax.swing.JTable dataTableSmall;
     private com.github.lgooddatepicker.components.DatePicker date;
     private com.github.lgooddatepicker.components.DatePicker date_picker;
-    private com.github.lgooddatepicker.components.DatePicker date_picker1;
     private javax.swing.JComboBox<String> depart;
     private javax.swing.JTabbedPane editTab;
+    private javax.swing.JComboBox<String> edit_cat;
+    private com.github.lgooddatepicker.components.DatePicker edit_date;
     private javax.swing.JTextField edit_desc;
     private javax.swing.JTextField edit_item_name;
+    private javax.swing.JTextField edit_receiver;
     private javax.swing.JTextField edit_supplier;
     private javax.swing.JMenuItem exitMenu;
     private javax.swing.JMenu exitMenuItem;
@@ -964,7 +967,6 @@ public final class StockIn extends javax.swing.JFrame {
     private javax.swing.JTextField queryForStock;
     private javax.swing.JTextField receivedBy;
     private javax.swing.JTextField receiver;
-    private javax.swing.JTextField receiver1;
     private javax.swing.JButton stockSaveBtn;
     private javax.swing.JTextField supplier;
     private javax.swing.JTextField text_desc;
